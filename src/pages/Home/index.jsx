@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import Header from "../../components/Header";
-import { Container } from "./styles";
+import { Container, ContainerItems } from "./styles";
 import Cards from "../../components/Cards";
 
 function Home() {
     const [movies, setMovies] = useState();
+    const [Filter, setFilter] = useState();
 
     useEffect(() => {
         async function loadData() {
@@ -13,6 +14,7 @@ function Home() {
                 data: { docs },
             } = await api.get("movie");
 
+            setFilter(docs);
             setMovies(docs);
             console.log(docs);
         }
@@ -22,14 +24,14 @@ function Home() {
 
     return (
         <Container>
-            <Header />
+            <Header movies={movies} setFilter={setFilter} />
 
-            {movies &&
-                movies.map((movie) => (
-                    <Cards movieData={movie} key={movie._id} />
-                ))}
-
-            <div></div>
+            <ContainerItems>
+                {Filter &&
+                    Filter.map((movie) => (
+                        <Cards movieData={movie} key={movie._id} />
+                    ))}
+            </ContainerItems>
         </Container>
     );
 }

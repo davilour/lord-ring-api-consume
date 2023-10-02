@@ -21,7 +21,7 @@ export const Container = styled.div`
     justify-content: space-between;
     flex-direction: column;
     margin: 40px 0;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 2px solid #c3c3c3;
     padding-bottom: 32px;
 
     .ave-value {
@@ -32,7 +32,7 @@ export const Container = styled.div`
             height: 40px;
             width: 200px;
             border-radius: 5px;
-            border: 2px solid #f0f0f0;
+            border: 2px solid #b7b7b7;
             padding-left: 5px;
         }
     }

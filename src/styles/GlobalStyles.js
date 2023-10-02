@@ -10,6 +10,7 @@ export default createGlobalStyle`
   font-family: 'Poppins', sans-serif;
   font-weight: 400px;
   color: #0C1932;
+  overflow-x: hidden;
 
 }
 
